@@ -1,0 +1,24 @@
+function createCar(make, model) { //makes a recipe for creating cars
+  return function() {
+    this.make = make;
+    this.model = model;
+  };
+}
+
+const Car = createCar('Toyota', 'Camry'); //constructor function // creating a blueprint for a Toyota Camry
+const myCar = new Car(); //create an instance of Car //building a real Toyota Camry based on the blueprint.
+console.log(myCar); // Output: Toyota
+
+
+function van(make, model) { //directly makes a van without a separate recipe
+  this.make = make;
+  this.model = model;
+}
+const myVan = new van('Toyota', 'Hilax'); //create an instance of van
+console.log(myVan); // Output: Toyota
+
+//====
+//"new" is a keyword in JavaScript syntax. It is used when creating instances of objects from constructor functions. 
+//When you use "new" followed by a constructor function, 
+//it creates a new object and sets the constructor function as the prototype of that object. 
+//This allows you to create instances of custom objects with their own unique properties and methods.
